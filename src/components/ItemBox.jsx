@@ -1,4 +1,4 @@
-import img from "../assets/images/image-brownie-mobile.jpg";
+
 import cartIcon from "../assets/images/icon-add-to-cart.svg";
 import increase from "../assets/images/icon-increment-quantity.svg"
 import decrease from "../assets/images/icon-decrement-quantity.svg"
