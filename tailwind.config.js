@@ -5,6 +5,9 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily:{
+     "custom-font": ["Red Hat Text", 'sans-serif']
+    },
     colors: {
        "red": "hsl(14, 86%, 42%)",
        "green": "hsl(159, 69%, 38%)",

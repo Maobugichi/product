@@ -38,8 +38,8 @@ export default function BoxItem({category,image,name,price,updateClick,click,btn
           image={image}
           />
      <div>
-      <span className="text-rose-400">{category}</span>
-      <p id={btnId} ref={paraRef} className="text-rose-900 font-bold">{name}</p>
+      <span className="text-rose-400 text-sm">{category}</span>
+      <p id={btnId} ref={paraRef} className="text-rose-900 font-semibold">{name}</p>
       <span className="text-red font-semibold">${price}</span>
      </div>
     </div>
@@ -121,7 +121,7 @@ function CartButton({category,index,price,setIndex,btnIndex,checkClick,clickStat
  }
  
  return(
-  <button id={btnId} ref={buttonRef} className={`absolute lg:top-[63%] top-[55%] left-[24%] md:left-[19%] h-[45px] lg:left-9 rounded-3xl border-2  border-rose-300 w-[50%] lg:w-[170px] md:w-[58%]  flex items-center justify-center   ${ btn == btnId && !clickStatus.count[category].em ?  `animate-colorChange border-none gap-9` : `bg-roseFify`}` } onClick={handleClick}>{  btn == btnId && !clickStatus.count[category].em ? <> <div  className="border-2 border-roseFify rounded-full h-[18px] w-[18px] flex justify-center items-center"><img id={btnId} onClick={handleDecrease} className="w-[90%] h-[90%]" src={decrease} alt="minus symbol" /></div> <p id={btnId}>{clickStatus.count[category].counter}</p> <div id={btn}  className="border-2 border-roseFify rounded-full h-[18px] w-[18px] flex justify-center items-center" ><img id={btnId} onClick={handleIncrease} src={increase} alt="plus symbol" /></div></> : <><img  src={cartIcon} alt="add to cart icon" />Add to Cart</>}</button>
+  <button id={btnId} ref={buttonRef} className={`absolute lg:top-[63%] top-[55%] left-[24%] md:left-[19%] h-[45px] lg:left-9 rounded-3xl border-2  border-rose-300 w-[50%] lg:w-[170px] md:w-[58%]  flex items-center justify-center text-md gap-1   ${ btn == btnId && !clickStatus.count[category].em ?  `animate-colorChange border-none gap-9` : `bg-roseFify`}` } onClick={handleClick}>{  btn == btnId && !clickStatus.count[category].em ? <> <div  className="border-2 border-roseFify rounded-full h-[18px] w-[18px] flex justify-center items-center"><img id={btnId} onClick={handleDecrease} className="w-[90%] h-[90%]" src={decrease} alt="minus symbol" /></div> <p id={btnId}>{clickStatus.count[category].counter}</p> <div id={btn}  className="border-2 border-roseFify rounded-full h-[18px] w-[18px] flex justify-center items-center" ><img id={btnId} onClick={handleIncrease} src={increase} alt="plus symbol" /></div></> : <><img  src={cartIcon} alt="add to cart icon" />Add to Cart</>}</button>
  )
 
  

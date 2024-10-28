@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import confirmed from "../assets/images/icon-order-confirmed.svg"
 
-export default function OrderConfirmed({clicked,yc,rr,isOpen,setOpen,setRr,setSum2}) {
+export default function OrderConfirmed({clicked,yc,rr,isOpen,setOpen,setRr,setSum2,isTotal}) {
   const [isCheckOutList, setIsCheckOutList] = useState(yc) 
   const innerText = document.querySelectorAll("img")
   useEffect(() => {
@@ -46,8 +46,8 @@ export default function OrderConfirmed({clicked,yc,rr,isOpen,setOpen,setRr,setSu
 
   return(
     <>
-      <div className={`bg-blaopa w-full absolute  z-20 h-[400vh] lg:h-[200vh] overflow-hidden  ${isOpen ? "block" : "hidden"}`}>
-        <div className="bg-white lg:w-[450px] mx-auto h-auto min-h-[400px]  grid items-center rounded-md p-5 lg:mt-[5%] mt-[10%]">
+      <div className={`bg-blaopa w-full fixed  z-20 h-[400vh] lg:h-[200vh] overflow-scroll  ${isOpen ? "block" : "hidden"}`}>
+        <div className="bg-white lg:w-[450px] mx-auto h-auto min-h-[400px] max-h-[100vh]  grid items-center rounded-md p-5 lg:mt-[5%]  absolute w-full overflow-scroll">
           <div className=" h-auto min-h-[350px] flex flex-col justify-between">
           <div className=" w-[95%] mx-auto h-[130px] flex flex-col items-start gap-3 justify-center">
             <img className="h-[30px]" src={confirmed} alt="" />
@@ -60,8 +60,9 @@ export default function OrderConfirmed({clicked,yc,rr,isOpen,setOpen,setRr,setSu
         
           <div className="h-auto min-h-[100px] bg-rose-100 w-[95%] mx-auto rounded-sm flex flex-col p-3">
             {li}
-            <div className="h-[80px] flex items-center w-[90%] mx-auto">
+            <div className="h-[80px] flex items-center w-[90%] mx-auto justify-between">
             <span>Order Total</span>
+            <p className="text-2xl font-bold">${Math.round(isTotal * 10) / 10}{Math.round(isTotal * 10) / 10 <= 9 && Math.round(isTotal * 10) / 10 != 6.5 && Math.round(isTotal * 10) / 10 != 4.5 && Math.round(isTotal * 10) / 10 != 5.5 ? ".00" : "0"}</p>
             </div>
           </div>
             

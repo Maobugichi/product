@@ -46,6 +46,7 @@ const [clickedButtonId, setClickedButtonId] = useState({});
 const [empty, setEmpty] = useState(false)
 const [isOpen, setOpen] = useState(null)
 const [isSum2, setSum2] = useState()
+const [isTotal,setTotal] = useState()
 const imgMap = [ waffleImg,creme,macaron,tiramisu,bakalava,meringue,velvet,brownie,panna]
 const mobileImg = [waffleMobile,cremeMobile,macaronMobile,tiramisuMobile,bakalavaMobile,meringueMobile,velvetMobile,brownieMobile,pannaMobile]
 const thumbImg = [waffleThumb,cremeThumb,macaronThumb,tiramisuThumb,bakalavaThumb,meringueThumb,velvetThumb,,brownieThumb,,pannaThumb]
@@ -107,7 +108,7 @@ const foodItemList1 =  icon.slice(0,3).map((item,index) => {
   })
  return(
    <>
-   <main className="overflow-hidden lg:w-full h-auto min-h-[100vh] pb-5 w-full ">
+   <main className="font-custom-font overflow-x-hidden lg:w-full h-auto min-h-[100vh] pb-5 w-full ">
     <OrderConfirmed
      key={count + 1}
      clicked={isClicked}
@@ -120,9 +121,11 @@ const foodItemList1 =  icon.slice(0,3).map((item,index) => {
      setOpen={setOpen}
      setRr={setRr}
      setSum2={setSum2}
+     isTotal={isTotal}
+     setTotal={setTotal}
     />
    <div className="lg:w-[95%] mx-auto">
-   <h1 className="pt-5 lg:ml-2 ml-8 h-fit text-3xl text-rose-900 font-bold ">Desserts</h1>
+   <h1 className="pt-5 lg:ml-2 ml-8 h-fit text-4xl text-rose-900 font-bold ">Desserts</h1>
     <div className="w-[95%] flex flex-col  mx-auto items-center lg:items-start lg:flex lg:flex-row lg:w-full justify-between h-full">
     <section className="lg:w-[68%]  w-[90%] lg:flex  flex-col lg:justify-between mt-[4%]">
       <ItemList>
@@ -153,6 +156,8 @@ const foodItemList1 =  icon.slice(0,3).map((item,index) => {
      setOpen={setOpen}
      setSum2={setSum2}
      isSum2={isSum2}
+     isTotal={isTotal}
+     setTotal={setTotal}
      />
     </article>
     </div>
